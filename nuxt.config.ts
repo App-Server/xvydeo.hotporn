@@ -14,12 +14,29 @@ export default defineNuxtConfig({
         }
       ],
       script: [
+        // Bootstrap JS
         {
           src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js',
           integrity: 'sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI',
           crossorigin: 'anonymous',
           tagPosition: 'bodyClose'
         },
+        
+        // Google Analytics (gtag.js)
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-H1Z92RMDED',
+          async: true
+        },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H1Z92RMDED');
+          `,
+          type: 'text/javascript'
+        },
+
         // Scripts globais da rede de anúncios
         {
           src: 'https://pl31436303.profitableratecpmnetwork.com/06/5b/21/065b214dfb2e80807ebeb7c6f9bc4b54.js',
@@ -32,7 +49,7 @@ export default defineNuxtConfig({
         {
           src: 'https://pl31436304.profitableratecpmnetwork.com/fc937d79a666574dbebc15156cb96b43/invoke.js',
           async: true,
-          'data-cfasync': 'false'
+          'data-cfasync': 'false' as any
         }
       ]
     }
