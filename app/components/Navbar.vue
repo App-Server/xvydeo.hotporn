@@ -12,13 +12,13 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Straight</a>
+                            <router-link class="nav-link" to="/">Straight</router-link>
+                        </li>
+                       <li class="nav-item">
+                            <router-link class="nav-link" to="/gay">Gay</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Trans</a>
+                            <router-link class="nav-link" to="/trans">Trans</router-link>
                         </li>
                     </ul>
                 </div>
